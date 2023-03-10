@@ -1,0 +1,19 @@
+handler: src/people/App.handler
+memorySize: 128
+events:
+  - http:
+      path: /people
+      method: GET
+      integration: lambda
+      #cors: ${file(config/serverless/http-cors.yml)}
+      request:
+        template:
+          application/json: ${file(config/serverless/request/people/getAllPeople.vm)}
+  - http:
+      path: /people/{id}
+      method: GET
+      integration: lambda      
+      #cors: ${file(config/serverless/http-cors.yml)}
+      request:
+        template:
+          application/json: ${file(config/serverless/request/people/getPeopleById.vm)}

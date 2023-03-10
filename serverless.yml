@@ -4,7 +4,14 @@ frameworkVersion: '3'
 provider:
   name: aws
   runtime: nodejs14.x
+  stage: dev
+  region: us-east-1
+
+plugins:
+  - serverless-offline
 
 functions:
-  function1:
-    handler: index.handler
+  people: ${file(config/serverless/function/people.yml)}
+  #planets: ${file(config/serverless/function/planets.yml)}
+  #species: ${file(config/serverless/function/species.yml)}
+    
