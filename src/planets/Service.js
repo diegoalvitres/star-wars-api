@@ -1,23 +1,20 @@
 const DataAccess = require('./DataAccess');
-// const PlanetReponse = require('./models/PlanetReponse');
+const PlanetReponse = require('./models/PlanetResponse');
 
 async function fetchAllPlanets() {
-    console.log("all planets");
     try {
         const result = await DataAccess.getAllPlanetsDB();
-        console.log(result);
-        return result;
+        return result.map((item) => PlanetReponse.map(item));
     } catch (error) {
         throw error;
     }
 }
 
 async function fetchPlanetById(payload) {
-    console.log("all planets by id");
     try {
         const { id } = payload;
         const result = await DataAccess.getAllPlanetsByIdDB(id);
-        return result;
+        return PlanetReponse.map(result);
     } catch (error) {
         throw error;
     }
