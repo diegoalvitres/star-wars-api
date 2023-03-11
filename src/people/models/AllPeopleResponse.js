@@ -8,8 +8,8 @@ class AllPeopleResponse {
         next: "siguiente",
         previous: "previo",
         "results": {
-            key: "resultados2",
-            transform: (val) => val.map((idx) => PeopleResponse.map(idx))
+            key: "resultados",
+            transform: (val) => (val) ? val.map((idx) => PeopleResponse.map(idx)) : null
         },
         detail: "detalle"
     };
