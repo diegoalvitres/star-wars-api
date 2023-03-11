@@ -12,6 +12,11 @@
   },
   "author": "Diego Alvitres",
   "license": "ISC",
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      ".DataAccess.js"
+    ]
+  },
   "devDependencies": {
     "aws-sdk": "^2.1332.0",
     "jest": "^29.5.0",

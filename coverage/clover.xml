@@ -1,80 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1678545572618" clover="3.2.0">
-  <project timestamp="1678545572619" name="All files">
-    <metrics statements="48" coveredstatements="26" conditionals="8" coveredconditionals="4" methods="11" coveredmethods="6" elements="67" coveredelements="36" complexity="0" loc="48" ncloc="48" packages="3" files="6" classes="6"/>
+<coverage generated="1678546478033" clover="3.2.0">
+  <project timestamp="1678546478033" name="All files">
+    <metrics statements="31" coveredstatements="30" conditionals="6" coveredconditionals="6" methods="8" coveredmethods="8" elements="45" coveredelements="44" complexity="0" loc="31" ncloc="31" packages="3" files="5" classes="5"/>
     <package name="people">
-      <metrics statements="37" coveredstatements="15" conditionals="6" coveredconditionals="2" methods="7" coveredmethods="2"/>
+      <metrics statements="20" coveredstatements="19" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
       <file name="Controller.js" path="D:\Reto\star-wars-api\src\people\Controller.js">
-        <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
-        <line num="1" count="1" type="stmt"/>
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="1" count="2" type="stmt"/>
         <line num="4" count="4" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-      </file>
-      <file name="DataAccess.js" path="D:\Reto\star-wars-api\src\people\DataAccess.js">
-        <metrics statements="17" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="6" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="30" count="1" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
       </file>
       <file name="Service.js" path="D:\Reto\star-wars-api\src\people\Service.js">
-        <metrics statements="16" coveredstatements="9" conditionals="4" coveredconditionals="2" methods="2" coveredmethods="1"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
+        <metrics statements="16" coveredstatements="15" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
         <line num="6" count="4" type="stmt"/>
         <line num="7" count="4" type="stmt"/>
         <line num="8" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="9" count="1" type="stmt"/>
         <line num="14" count="3" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="21" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="21" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
-        <line num="33" count="1" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
       </file>
     </package>
     <package name="people.models">
       <metrics statements="10" coveredstatements="10" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
       <file name="AllPeopleResponse.js" path="D:\Reto\star-wars-api\src\people\models\AllPeopleResponse.js">
         <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
         <line num="6" count="3" type="stmt"/>
         <line num="12" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="16" count="3" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
       </file>
       <file name="PeopleResponse.js" path="D:\Reto\star-wars-api\src\people\models\PeopleResponse.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="5" count="4" type="stmt"/>
-        <line num="24" count="4" type="stmt"/>
-        <line num="28" count="1" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="5" count="6" type="stmt"/>
+        <line num="24" count="6" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
       </file>
     </package>
     <package name="people.support">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="Constants.js" path="D:\Reto\star-wars-api\src\people\support\Constants.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
       </file>
     </package>
   </project>
