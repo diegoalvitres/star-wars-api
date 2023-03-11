@@ -6,12 +6,24 @@ provider:
   runtime: nodejs14.x
   stage: dev
   region: us-east-1
+  tracing:
+    apiGateway: true
+    lambda: true
+  environment:
+    STAGE: ${self:provider.stage}
+    TABLE_NAME_PLANETS: ${self:provider.stage}-star-wars-planets
+
+custom:
+  dynamodb:
+    stages:
+     - dev
 
 plugins:
   - serverless-offline
+  - serverless-dynamodb-local
 
 functions:
   people: ${file(config/serverless/function/people.yml)}
-  #planets: ${file(config/serverless/function/planets.yml)}
+  planets: ${file(config/serverless/function/planets.yml)}
   #species: ${file(config/serverless/function/species.yml)}
     

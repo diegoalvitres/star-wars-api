@@ -1,0 +1,19 @@
+handler: src/planets/App.handler
+memorySize: 128
+events:
+  - http:
+      path: /planet
+      method: GET
+      integration: lambda
+      #cors: ${file(config/serverless/http-cors.yml)}
+      request:
+        template:
+          application/json: ${file(config/serverless/request/planets/getAllPlanets.vm)}
+  - http:
+      path: /planet/{id}
+      method: GET
+      integration: lambda      
+      #cors: ${file(config/serverless/http-cors.yml)}
+      request:
+        template:
+          application/json: ${file(config/serverless/request/planets/getPlanetById.vm)}
