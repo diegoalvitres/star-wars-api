@@ -14,13 +14,17 @@
   "license": "ISC",
   "jest": {
     "coveragePathIgnorePatterns": [
-      ".DataAccess.js"
+      ".DataAccess.js",
+      "<rootDir>/commons",
+      "<rootDir>/config",
+      "<rootDir>/scripts",
+      ".dto"
     ]
   },
   "devDependencies": {
     "aws-sdk": "^2.1332.0",
     "jest": "^29.5.0",
-    "serverless-dynamodb-local": "https://github.com/eheyder/serverless-dynamodb-local.git#v1",
+    "serverless-dynamodb-local": "^0.2.40",
     "serverless-offline": "^12.0.4",
     "supertest": "^6.3.3"
   },

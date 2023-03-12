@@ -7,11 +7,7 @@ function clearResponseLambda(value) {
     const cleanStr = _cleanAndConvertToObject(value.Payload);
     console.log("first Parse");
     console.log(cleanStr);
-    // console.log(cleanStr.detalle);
-    const objResponse = (process.env.STAGE === 'dev') ? cleanStr : _cleanAndConvertToObject(cleanStr);
-    console.log("second Parse");
-    console.log(objResponse);
-    return objResponse || { error: true };
+    return cleanStr || { error: true };
 }
 
 module.exports = {

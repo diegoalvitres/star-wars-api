@@ -1,30 +1,21 @@
 const Joi = require('joi');
+const Validator = require('../../commons/validation/Validator');
 
 async function validateParamName(payload) {
-    try {
-        const schema = Joi.object().keys({
-            nombre: Joi.string().required()
-        });
-        await schema.validateAsync(payload);
-    }catch (error) {
-        console.error(error);
-        throw new Error(`[400] ${error}`);
-    }
+    const schema = Joi.object().keys({
+        nombre: Joi.string().required()
+    });
+    await Validator.validate(schema, payload);
 }
 async function validateRequestPlanet(payload) {
-    try {
-        const schema = Joi.object().keys({
-            nombre: Joi.string().required().min(1),
-            peliculas: Joi.array().items(Joi.string()),
-            residentes: Joi.array().items(Joi.string()),
-            clima: Joi.string(),
-            terreno: Joi.string() 
-        });
-        schema.validateAsync(payload);
-    }catch (error) {
-        console.error(error);
-        throw new Error(`[400] ${error}`);
-    }
+    const schema = Joi.object().keys({
+        nombre: Joi.string().required().min(1),
+        peliculas: Joi.array().items(Joi.string()),
+        residentes: Joi.array().items(Joi.string()),
+        clima: Joi.string(),
+        terreno: Joi.string() 
+    });
+    await Validator.validate(schema, payload);
 }
 
 module.exports = { validateParamName, validateRequestPlanet };

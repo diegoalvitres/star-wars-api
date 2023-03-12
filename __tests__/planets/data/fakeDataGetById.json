@@ -1,0 +1,69 @@
+{
+    "data": [
+        {
+          "films": [
+            "https://swapi.py4e.com/api/films/1/",
+            "https://swapi.py4e.com/api/films/6/"
+          ],
+          "edited": "2014-12-20T20:58:18.420000Z",
+          "created": "2014-12-10T11:35:48.479000Z",
+          "climate": "temperate",
+          "rotation_period": "24",
+          "url": "https://swapi.py4e.com/api/planets/2/",
+          "population": "2000000000",
+          "orbital_period": "364",
+          "surface_water": "40",
+          "GSI1PK": "PLANET",
+          "diameter": "12500",
+          "gravity": "1 standard",
+          "GSI1SK": "Alderaan",
+          "SK": "2014-12-10T11:35:48.479000Z",
+          "name": "Alderaan",
+          "residents": [
+            "https://swapi.py4e.com/api/people/5/",
+            "https://swapi.py4e.com/api/people/68/",
+            "https://swapi.py4e.com/api/people/81/"
+          ],
+          "PK": "PLANET#2",
+          "terrain": "grasslands, mountains"
+        }
+    ],
+    "getPlanetByIdOk": {
+        "payload": {
+            "id": "2"
+        },
+        "response": {
+            "id": "2",
+            "peliculas": [
+                "https://swapi.py4e.com/api/films/1/",
+                "https://swapi.py4e.com/api/films/6/"
+            ],
+            "editado": "2014-12-20T20:58:18.420000Z",
+            "creado": "2014-12-10T11:35:48.479000Z",
+            "clima": "temperate",
+            "periodo_rotacion": "24",
+            "url": "https://swapi.py4e.com/api/planets/2/",
+            "poblacion": "2000000000",
+            "periodo_orbital": "364",
+            "agua_en_superficie": "40",
+            "diametro": "12500",
+            "gravedad": "1 standard",
+            "nombre": "Alderaan",
+            "residentes": [
+                "https://swapi.py4e.com/api/people/5/",
+                "https://swapi.py4e.com/api/people/68/",
+                "https://swapi.py4e.com/api/people/81/"
+            ],
+            "terreno": "grasslands, mountains"
+        }
+    },
+    "notFoundPlanet": {
+        "payload": {
+            "id": "12345"
+        },
+        "response": {
+            "statusCode": "400",
+            "detalle": "Planeta no encontrado"
+        }
+    }
+}

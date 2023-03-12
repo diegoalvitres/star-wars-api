@@ -1,0 +1,81 @@
+{
+    "data": {
+        "PK": "PLANET#01GV9TCGTR1RA8KGKV85ECAZ2D",
+        "SK": "2023-03-12T02:28:54.232Z",
+        "GSI1PK": "PLANET",
+        "GSI1SK": "Tierra",
+        "id": "01GV9TCGTR1RA8KGKV85ECAZ2D",
+        "films": [],
+        "edited": "2023-03-12T02:28:54.232Z",
+        "created": "2023-03-12T02:28:54.232Z",
+        "climate": "wet",
+        "rotation_period": "360",
+        "url": "http://localhost:3000/dev/planet/01GV9TCGTR1RA8KGKV85ECAZ2D",
+        "population": "8000000000",
+        "orbital_period": null,
+        "surface_water": "50",
+        "diameter": "204650",
+        "gravity": "desconocido",
+        "name": "Tierra",
+        "residents": [],
+        "terrain": "desert, wet"
+    },
+    "dataCallLambda": {
+        "StatusCode": 200,
+        "Payload": "{\"statusCode\": 400, \"detalle\": \"Planeta no encontrado\"}"
+    },
+    "dataCallLambdaWithData": {
+        "StatusCode": 200,
+        "Payload": "{\"id\": \"01GV9THRJY87R7MAQ03HFC7KDD\",\"peliculas\": [],\"editado\": \"2023-03-12T02:31:46.015Z\",\"creado\": \"2023-03-12T02:31:46.015Z\",\"clima\": \"wet\"}"
+    },
+    "addNewPlanet": {
+        "payload": {
+            "clima": "wet",
+            "periodo_rotacion": "360",
+            "poblacion": "8000000000",
+            "agua_en_superficie": "50",
+            "diametro": "204650",
+            "nombre": "Tierra",
+            "residentes": [],
+            "terreno": "desert, wet"
+        },
+        "response": {
+            "id": "01GV9TCGTR1RA8KGKV85ECAZ2D",
+            "peliculas": [],
+            "editado": "2023-03-12T02:28:54.232Z",
+            "creado": "2023-03-12T02:28:54.232Z",
+            "clima": "wet",
+            "periodo_rotacion": "360",
+            "url": "http://localhost:3000/dev/planet/01GV9TCGTR1RA8KGKV85ECAZ2D",
+            "poblacion": "8000000000",
+            "agua_en_superficie": "50",
+            "diametro": "204650",
+            "gravedad": "desconocido",
+            "nombre": "Tierra",
+            "residentes": [],
+            "terreno": "desert, wet"
+        }
+    },
+    "propertyRequired": {
+        "payload": {
+            "clima": "wet",
+            "poblacion": "8000000000",
+            "terreno": "desert, wet"
+        },
+        "response": {
+            "errorMessage": "ValidationException: \"nombre\" es requerido"
+        }
+    },
+    "duplicatedPlanetName": {
+        "payload": {
+            "clima": "wet",
+            "poblacion": "8000000000",
+            "terreno": "desert, wet",
+            "nombre": "Alderaan"
+        },
+        "response": {
+            "statusCode": 400,
+            "message": "El nombre del planeta ya está registrado"
+        }
+    }
+}

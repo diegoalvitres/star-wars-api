@@ -6,8 +6,10 @@ const Constants = require('./support/Constants');
 async function fetchAllPlanets() {
     try {
         const result = await DataAccess.getAllPlanetsDB();
+        console.log(result);
         if (result.length === 0) {
-            return {
+            throw {
+                statusCode: 400,
                 "detalle": "No se encontraron planetas"
             };
         }
@@ -23,7 +25,8 @@ async function fetchPlanetById(payload) {
         const { id } = payload;
         const result = await DataAccess.getPlanetsByIdDB(id);
         if (result.length === 0) {
-            return {
+            throw {
+                statusCode: 400,
                 "detalle": "Planeta no encontrado"
             };
         }
@@ -41,7 +44,7 @@ async function fetchPlanetByName(payload) {
         if (result.length === 0) {
             throw {
                 statusCode: 400,
-                "detalle": "Planeta no encontradox"
+                "detalle": "Planeta no encontrado"
             };
         }
         return PlanetReponse.map(result);
@@ -57,12 +60,13 @@ async function addPlanet(payload) {
         const callLambdaGetPlanetByName = await _invokeLambda(Constants.FUNCTION_NAME_PLANET, Constants.ACTION_NAME, {nombre});
         const resultResponse = ServiceSupport.clearResponseLambda(callLambdaGetPlanetByName);
         if (!resultResponse.detalle) {
-            return {
+            throw {
                 statusCode: 400,
                 message: "El nombre del planeta ya está registrado"
             }
         }
         const result = await DataAccess.createPlanetDB(payload);
+        console.log(result);
         return PlanetReponse.map(result);
     } catch (error) {
         console.error(error);
