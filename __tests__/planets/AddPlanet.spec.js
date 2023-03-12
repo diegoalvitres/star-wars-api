@@ -14,7 +14,7 @@ function errorExpect(error, errorResponse) {
     if (errorResponse.errorMessage) {
         expect(error.toString()).toEqual(errorResponse.errorMessage);
     } else {
-        expect(error.statusCode).toEqual(errorResponse.statusCode);
+        expect(error.toString()).toEqual(errorResponse.message);
     }
 }
   

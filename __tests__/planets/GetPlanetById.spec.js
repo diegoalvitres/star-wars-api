@@ -11,7 +11,7 @@ async function okTest(payload, response, data) {
 
 function errorExpect(error, errorResponse) {
     if (!error.detalle) {
-        expect(error.toString()).toEqual(errorResponse.errorMessage);
+        expect(error.toString()).toEqual(errorResponse.detalle);
     } else {
         expect(error.detalle).toEqual(errorResponse.detalle);
     }

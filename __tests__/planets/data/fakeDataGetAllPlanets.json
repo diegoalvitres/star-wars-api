@@ -132,7 +132,7 @@
         "payload": {},
         "response": {
             "statusCode": "400",
-            "detalle": "No se encontraron planetas"
+            "detalle": "{\"statusCode\":404,\"message\":\"{\\\"statusCode\\\":404,\\\"message\\\":[\\\"No se encontraron planetas\\\"]}\"}"
         }
     }
 }

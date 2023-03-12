@@ -10,7 +10,7 @@ async function okTest(payload, response, data) {
 }
 
 function errorExpect(error, errorResponse) {
-    expect(error.detalle).toEqual(errorResponse.detalle);
+    expect(error.toString()).toEqual(errorResponse.detalle);
 }
   
 async function errorTest(payload, errorResponse, data) {

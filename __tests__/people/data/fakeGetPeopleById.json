@@ -75,7 +75,7 @@
     },
     "errorCallingExternalAPI": {
         "response": {
-            "code": "ERROR",
+            "code": "500",
             "description": "Error llamando a API externa"
         }
     }

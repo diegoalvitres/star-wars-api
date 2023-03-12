@@ -13,7 +13,7 @@ function errorExpect(error, errorResponse) {
     if (!errorResponse.detalle) {
         expect(error.toString()).toEqual(errorResponse.errorMessage);
     } else {
-        expect(error.detalle).toEqual(errorResponse.detalle);            
+        expect(error.toString()).toEqual(errorResponse.detalle);            
     }
 }
   

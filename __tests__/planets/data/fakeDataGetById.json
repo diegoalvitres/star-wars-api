@@ -63,7 +63,7 @@
         },
         "response": {
             "statusCode": "400",
-            "detalle": "Planeta no encontrado"
+            "detalle": "{\"statusCode\":404,\"message\":\"{\\\"statusCode\\\":404,\\\"message\\\":[\\\"Planeta no encontrado\\\"]}\"}"
         }
     }
 }

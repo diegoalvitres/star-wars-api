@@ -63,7 +63,7 @@
         },
         "response": {
             "statusCode": "400",
-            "detalle": "Planeta no encontrado"
+            "detalle": "{\"statusCode\":404,\"message\":\"{\\\"statusCode\\\":404,\\\"message\\\":[\\\"Planeta no encontrado\\\"]}\"}"
         }
     },
     "paramNameRequired": {
@@ -71,7 +71,7 @@
             "nomb": "Something"
         },
         "response": {
-            "errorMessage": "ValidationException: \"nombre\" es requerido"
+            "errorMessage": "ValidationException: {\"statusCode\":400,\"message\":[\"\\\"nombre\\\" es requerido\"]}"
         }
     }
 }

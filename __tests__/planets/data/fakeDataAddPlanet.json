@@ -63,7 +63,7 @@
             "terreno": "desert, wet"
         },
         "response": {
-            "errorMessage": "ValidationException: \"nombre\" es requerido"
+            "errorMessage": "ValidationException: {\"statusCode\":400,\"message\":[\"\\\"nombre\\\" es requerido\"]}"
         }
     },
     "duplicatedPlanetName": {
@@ -75,7 +75,7 @@
         },
         "response": {
             "statusCode": 400,
-            "message": "El nombre del planeta ya está registrado"
+            "message": "Error: {\"statusCode\":400,\"message\":\"El nombre del planeta ya está registrado\"}"
         }
     }
 }
