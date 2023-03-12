@@ -11,7 +11,6 @@ async function callAllPeopleAPI(page) {
 
 async function callPeopleByIdAPI(id) {
     const urlWithPathParam = `${Constants.EXTERNAL_ENDPOINT_PEOPLE}/${id}`;
-    console.log(urlWithPathParam)
     const result = await callExternalAPI(urlWithPathParam);
     return result;
 }

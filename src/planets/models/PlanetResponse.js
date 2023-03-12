@@ -9,9 +9,9 @@ class PlanetReponse {
     const map = {
         PK: {
             key: "id",
-            transform: (val) => _clearMeta(val)
+            transform: (val) => (val) ? _clearMeta(val) : null
         },
-        "films[]": "peliculas[]",
+        films: "peliculas",
         edited: "editado",
         created: "creado",
         climate: "clima",
@@ -23,7 +23,7 @@ class PlanetReponse {
         diameter: "diametro",
         gravity: "gravedad",
         name: "nombre",
-        "residents[]": "residentes[]",
+        residents: "residentes",
         terrain: "terreno"          
     };
     return objectMapper(keys, map);

@@ -5,7 +5,7 @@ events:
       path: /planet
       method: GET
       integration: lambda
-      #cors: ${file(config/serverless/http-cors.yml)}
+      cors: ${file(config/serverless/http-cors.yml)}
       request:
         template:
           application/json: ${file(config/serverless/request/planets/getAllPlanets.vm)}
@@ -13,7 +13,24 @@ events:
       path: /planet/{id}
       method: GET
       integration: lambda      
-      #cors: ${file(config/serverless/http-cors.yml)}
+      cors: ${file(config/serverless/http-cors.yml)}
       request:
         template:
           application/json: ${file(config/serverless/request/planets/getPlanetById.vm)}
+  - http:
+      path: /search/planet
+      method: GET
+      integration: lambda
+      cors: ${file(config/serverless/http-cors.yml)}
+      request:
+        template:
+          application/json: ${file(config/serverless/request/planets/getPlanetByName.vm)}    
+      #response: ${file(config/serverless/http-response.yml)}
+  - http:
+      path: /planet
+      method: POST
+      integration: lambda
+      cors: ${file(config/serverless/http-cors.yml)}
+      request:
+        template:
+          application/json: ${file(config/serverless/request/planets/addPlanet.vm)}

@@ -27,6 +27,7 @@
   "dependencies": {
     "joi": "^17.8.3",
     "node-fetch": "^2.6.7",
-    "object-mapper": "^6.2.0"
+    "object-mapper": "^6.2.0",
+    "ulid": "^2.3.0"
   }
 }

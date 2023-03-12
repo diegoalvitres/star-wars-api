@@ -5,7 +5,6 @@ class DynamoDBLib {
     static metaPlanets = 'PLANET';
 
     static getInstance() {
-        console.log('env: ', process.env);
         if (process.env.STAGE === 'dev') {
             console.log("IAMMM HERE");
             AWS.config.update({
@@ -18,7 +17,8 @@ class DynamoDBLib {
     static getTypeIndex() {
         return {
             name: 'GSI1',
-            PK: 'GSI1PK'
+            PK: 'GSI1PK',
+            SK: 'GSI1SK'
         };
     }
     static getPk(meta, id) {

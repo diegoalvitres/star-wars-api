@@ -3,15 +3,21 @@ const PeopleResponse = require('./models/PeopleResponse');
 const AllPeopleResponse = require('./models/AllPeopleResponse');
 
 async function fetchAllPeople(payload) {
-    const { page } = payload;
-    const result = await DataAccess.callAllPeopleAPI(page);
-    if (!result) {
-        return {
-            code: "ERROR",
-            description: "Error llamando a servicio externo"
-        };
+    try {
+        const { page } = payload;
+        const result = await DataAccess.callAllPeopleAPI(page);
+        if (!result) {
+            console.error("Error calling external API");
+            return {
+                statusCode: 500,
+                description: "Error llamando a servicio externo"
+            };
+        }
+        return AllPeopleResponse.map(result);
+    } catch (error) {
+        console.error(error);
+        throw error;
     }
-    return AllPeopleResponse.map(result);
 }
 
 async function fetchPeopleById(payload) {
@@ -19,13 +25,15 @@ async function fetchPeopleById(payload) {
         const { id } = payload;
         const result = await DataAccess.callPeopleByIdAPI(id);
         if (!result) {
+            console.error("Error calling external API");
             return {
-                code: "ERROR",
+                statusCode: 500,
                 description: "Error llamando a servicio externo"
             };
         }
         return PeopleResponse.map(result);
     } catch (error) {
+        console.error(error);
         throw error;
     }
 }

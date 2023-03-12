@@ -12,7 +12,7 @@ provider:
   environment:
     STAGE: ${self:provider.stage}
     TABLE_NAME_PLANETS: ${self:provider.stage}-star-wars-planets
-
+    FUNCTION_NAME_PLANETS: ${self:service}-${self:provider.stage}-planets
 custom:
   dynamodb:
     stages:
