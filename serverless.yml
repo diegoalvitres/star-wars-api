@@ -1,6 +1,12 @@
 service: star-wars-api
 frameworkVersion: '3'
 
+package:
+  patterns:
+    - '!scripts/**'
+    - '!__tests__/**'
+    - '!.dynamodb/**'
+
 provider:
   name: aws
   runtime: nodejs14.x
