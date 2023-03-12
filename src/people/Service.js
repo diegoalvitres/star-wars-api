@@ -1,6 +1,9 @@
 const DataAccess = require('./DataAccess');
 const PeopleResponse = require('./models/PeopleResponse');
 const AllPeopleResponse = require('./models/AllPeopleResponse');
+const AppException = require('../../commons/exceptions/AppException');
+const ServiceSupport = require('./support/ServiceSupport');
+const PeopleSchemaResponse = require('./models/PeopleSchemaResponse');
 
 async function fetchAllPeople(payload) {
     try {
@@ -8,10 +11,7 @@ async function fetchAllPeople(payload) {
         const result = await DataAccess.callAllPeopleAPI(page);
         if (!result) {
             console.error("Error calling external API");
-            return {
-                statusCode: 500,
-                description: "Error llamando a servicio externo"
-            };
+            new AppException(500, "Error llamando a servicio externo").throw();
         }
         return AllPeopleResponse.map(result);
     } catch (error) {
@@ -26,10 +26,7 @@ async function fetchPeopleById(payload) {
         const result = await DataAccess.callPeopleByIdAPI(id);
         if (!result) {
             console.error("Error calling external API");
-            return {
-                statusCode: 500,
-                description: "Error llamando a servicio externo"
-            };
+            new AppException(500, "Error llamando a servicio externo").throw();
         }
         return PeopleResponse.map(result);
     } catch (error) {
@@ -38,7 +35,22 @@ async function fetchPeopleById(payload) {
     }
 }
 
+async function fetchPeopleSchema() {
+    try {
+        const result = await DataAccess.callPeopleSchemaAPI();
+        const modifiedProperties = ServiceSupport.serializeObjectProperty(result);
+        const spanishPropertiesValues = PeopleResponse.map(modifiedProperties);
+        result.properties = spanishPropertiesValues;
+        result.required = Object.keys(spanishPropertiesValues);
+        return PeopleSchemaResponse.map(result);
+    } catch (error) {
+        console.error(error);
+        throw error;
+    }
+}
+
 module.exports = {
     fetchAllPeople,
-    fetchPeopleById
+    fetchPeopleById,
+    fetchPeopleSchema
 };

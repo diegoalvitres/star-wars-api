@@ -15,6 +15,12 @@ async function callPeopleByIdAPI(id) {
     return result;
 }
 
+async function callPeopleSchemaAPI() {
+    const urlWithPathParam = `${Constants.EXTERNAL_ENDPOINT_PEOPLE}/schema`;
+    const result = await callExternalAPI(urlWithPathParam);
+    return result;
+}
+
 async function callExternalAPI(endpoint) {
     try {
         const response = await fetch(endpoint);
@@ -28,5 +34,6 @@ async function callExternalAPI(endpoint) {
 
 module.exports = {
     callAllPeopleAPI,
-    callPeopleByIdAPI
+    callPeopleByIdAPI,
+    callPeopleSchemaAPI
 };

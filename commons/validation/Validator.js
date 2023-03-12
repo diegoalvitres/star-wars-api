@@ -18,8 +18,8 @@ module.exports.validate = async (schema, payload) => {
             });
 
             new ValidationException(
-            "ERVAL-0001",
-            messagesError
+                "ERVAL-0001",
+                JSON.stringify({statusCode: 400, message: messagesError})
             ).throw();
         }
     }

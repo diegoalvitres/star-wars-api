@@ -8,7 +8,12 @@ async function getPeopleById(payload) {
     return Service.fetchPeopleById(payload);
 }
 
+async function getPeopleSchema() {
+    return Service.fetchPeopleSchema();
+}
+
 module.exports = {
     getAllPeople,
-    getPeopleById
+    getPeopleById,
+    getPeopleSchema
 };

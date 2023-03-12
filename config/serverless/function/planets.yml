@@ -9,6 +9,7 @@ events:
       request:
         template:
           application/json: ${file(config/serverless/request/planets/getAllPlanets.vm)}
+      response: ${file(config/serverless/http-response.yml)}
   - http:
       path: /planet/{id}
       method: GET
@@ -17,6 +18,7 @@ events:
       request:
         template:
           application/json: ${file(config/serverless/request/planets/getPlanetById.vm)}
+      response: ${file(config/serverless/http-response.yml)}
   - http:
       path: /search/planet
       method: GET
@@ -25,7 +27,7 @@ events:
       request:
         template:
           application/json: ${file(config/serverless/request/planets/getPlanetByName.vm)}    
-      #response: ${file(config/serverless/http-response.yml)}
+      response: ${file(config/serverless/http-response.yml)}
   - http:
       path: /planet
       method: POST
@@ -34,3 +36,5 @@ events:
       request:
         template:
           application/json: ${file(config/serverless/request/planets/addPlanet.vm)}
+      response: ${file(config/serverless/http-response.yml)}
+      private: true

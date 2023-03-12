@@ -6,23 +6,45 @@ package:
     - '!scripts/**'
     - '!__tests__/**'
     - '!.dynamodb/**'
+    - '!coverage/**'
 
 provider:
   name: aws
   runtime: nodejs14.x
-  stage: dev
+  stage: dev #change 
   region: us-east-1
   tracing:
     apiGateway: true
     lambda: true
+  apiGateway:
+    apiKeys:
+      - testUser
   environment:
     STAGE: ${self:provider.stage}
     TABLE_NAME_PLANETS: ${self:provider.stage}-star-wars-planets
     FUNCTION_NAME_PLANETS: ${self:service}-${self:provider.stage}-planets
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+      Resource: "arn:aws:dynamodb:${self:provider.region}:${self:custom.targetAWSId}:table/${self:provider.stage}-star-wars*"
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+      Resource: "arn:aws:dynamodb:${self:provider.region}:${self:custom.targetAWSId}:table/${self:provider.stage}-star-wars*/index/GSI1"      
+    - Effect: Allow
+      Action:
+        - lambda:InvokeFunction
+      Resource: "arn:aws:lambda:${self:provider.region}:${self:custom.targetAWSId}:function:${self:service}-${self:provider.stage}-*"
 custom:
   dynamodb:
     stages:
      - dev
+  targetAWSId: "667147443781" #cambiar para el despliegue en otra cuenta
 
 plugins:
   - serverless-offline
@@ -31,5 +53,4 @@ plugins:
 functions:
   people: ${file(config/serverless/function/people.yml)}
   planets: ${file(config/serverless/function/planets.yml)}
-  #species: ${file(config/serverless/function/species.yml)}
     

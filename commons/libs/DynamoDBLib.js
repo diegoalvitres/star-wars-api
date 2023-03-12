@@ -5,8 +5,7 @@ class DynamoDBLib {
     static metaPlanets = 'PLANET';
 
     static getInstance() {
-        if (process.env.STAGE === 'dev') {
-            console.log("IAMMM HERE");
+        if (process.env.IS_OFFLINE) {
             AWS.config.update({
                 region: 'dynamodb',
                 endpoint: 'http://localhost:8000'

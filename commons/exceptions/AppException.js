@@ -2,8 +2,8 @@
 
 class AppException extends Error {
   constructor(
-    code = '0000',
-    message = 0,
+    code,
+    message,
     exception
   ) {
     super();
@@ -12,12 +12,13 @@ class AppException extends Error {
     this.message = Array.isArray(message) ? message : [message];
     this.name = 'AppException';
     if (exception) {
-      Logger.error(exception);
+      console.log(exception);
     }
   }
 
   throw(condition) {
     const appException = this;
+    appException.message = appException.toString();
     if (typeof condition === 'undefined') {
       throw appException;
     }
@@ -32,7 +33,7 @@ class AppException extends Error {
   }
 
   toString() {
-    return JSON.stringify({ code: this.code, message: this.message });
+    return JSON.stringify({ statusCode: this.code, message: this.message });
   }
 }
 

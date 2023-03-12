@@ -9,6 +9,7 @@ events:
       request:
         template:
           application/json: ${file(config/serverless/request/people/getAllPeople.vm)}
+      response: ${file(config/serverless/http-response.yml)}      
   - http:
       path: /people/{id}
       method: GET
@@ -17,3 +18,12 @@ events:
       request:
         template:
           application/json: ${file(config/serverless/request/people/getPeopleById.vm)}
+      response: ${file(config/serverless/http-response.yml)}
+  - http:
+      path: /people/schema
+      method: GET
+      integration: lambda
+      request:
+        template:
+          application/json: ${file(config/serverless/request/people/getPeopleSchema.vm)}
+      response: ${file(config/serverless/http-response.yml)}
